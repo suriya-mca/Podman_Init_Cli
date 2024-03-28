@@ -10,7 +10,7 @@ from jinja2 import Environment, FileSystemLoader
                  help='Name of the project')
 @click.option('--language', 
                  prompt='Choose language', 
-                 type=click.Choice(['python', 'java', 'go', 'node', 'c#'], case_sensitive=False), 
+                 type=click.Choice(['python', 'java', 'go', 'node', 'c#', 'rust'], case_sensitive=False), 
                  help='Choose project language')
 def podman_init(project_name, language):
 
@@ -62,6 +62,17 @@ def podman_init(project_name, language):
         case "c#" :
             framework = click.prompt('Choose framework', 
                                       type=click.Choice(['.net core', 'blazor'], case_sensitive=False), 
+                                      show_choices=True)
+
+            if framework == 'exit':
+                click.echo(style("Exiting...", fg='red'))
+                sys.exit()
+
+            template_dir = os.path.join(os.path.dirname(__file__), '../templates', language)
+
+        case "rust" :
+            framework = click.prompt('Choose framework', 
+                                      type=click.Choice(['actix', 'axum', 'rocket', 'warp', 'tide'], case_sensitive=False), 
                                       show_choices=True)
 
             if framework == 'exit':
