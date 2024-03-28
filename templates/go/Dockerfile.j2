@@ -27,8 +27,7 @@ WORKDIR /root/
 COPY --from=build /app/main .
 
 # Expose port 3000 to the outside world
-{% if framework == 'gin' %}EXPOSE 8080
-{% elif framework == 'echo' %}EXPOSE 8080
+{% if framework == 'gin' or framework == 'echo' %}EXPOSE 8080
 {% elif framework == 'chi' %}EXPOSE 3333
 {% elif framework == 'fiber' %}EXPOSE 3000
 {% endif %}
