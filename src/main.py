@@ -72,7 +72,7 @@ def podman_init(project_name, language):
 
         case "rust" :
             framework = click.prompt('Choose framework', 
-                                      type=click.Choice(['actix', 'axum', 'rocket', 'warp', 'tide'], case_sensitive=False), 
+                                      type=click.Choice(['actix', 'axum', 'rocket', 'warp', 'tide', 'exit'], case_sensitive=False), 
                                       show_choices=True)
 
             if framework == 'exit':
