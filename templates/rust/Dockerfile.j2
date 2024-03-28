@@ -1,0 +1,36 @@
+# Use the official Rust image as a base
+FROM rust:alpine3.19 AS builder
+
+# Set the working directory inside the container
+WORKDIR /usr/src/myapp
+
+# Copy the Cargo.toml and Cargo.lock files to the working directory
+COPY ./Cargo.toml ./Cargo.lock ./
+
+# Build dependencies (this step will cache dependencies if the Cargo.toml or Cargo.lock files haven't changed)
+RUN mkdir src && echo "fn main() {}" > src/main.rs \
+    && cargo build --release
+
+# Remove dummy source file
+RUN rm -rf src/
+
+# Copy the rest of the application source code
+COPY ./src ./src
+
+# Build the application
+RUN cargo build --release
+
+# Create a new, lightweight image containing only the built application
+FROM debian:buster-slim
+
+# Copy the built application from the builder stage to the final image
+COPY --from=builder /usr/src/myapp/target/release/myapp .
+
+# Expose the port the Actix Web application will listen on
+{% if framework == 'actix' %}EXPOSE 8080
+{% elif framework == 'axum' %}EXPOSE 3000
+{% elif framework == 'rocket' or framework == 'tide' %}EXPOSE 8000
+{% elif framework == 'warp' %}EXPOSE 3030
+{% endif %}
+# Command to run the application
+CMD ["./myapp"]
