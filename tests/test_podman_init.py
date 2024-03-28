@@ -1,7 +1,6 @@
 import os
 from click.testing import CliRunner
-from main import podman_init
-
+from src.main import podman_init
 
 def test_podman_init_python_flask():
     runner = CliRunner()
