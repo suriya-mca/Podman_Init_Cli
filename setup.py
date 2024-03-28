@@ -16,7 +16,6 @@ setup(
         ]
     },
     author='Suriya',
-    author_email='suriya1999@gmail.com',
     description='Python command-line tool that automates the process of initializing Docker-related files for your projects.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
@@ -27,4 +26,5 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
+    exclude_package_data={'': ['tests/*']}
 )
