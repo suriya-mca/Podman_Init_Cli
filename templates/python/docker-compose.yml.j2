@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  {{ project_name }}:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    {% if framework == 'django' %}container_name: django
+    ports:
+      - "8000:8000"
+    {% elif framework == 'fastapi' %}container_name: fastapi
+    ports:
+      - "8000:8000"
+    {% elif framework == 'flask' %}container_name: flask
+    ports:
+      - "5000:5000"      
+    {% endif %}volumes:
+      - .:/app

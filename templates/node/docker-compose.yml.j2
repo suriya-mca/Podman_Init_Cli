@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  {{ project_name }}:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    {% if framework == 'express' %}container_name: express
+    {% elif framework == 'nest' %}container_name: nest
+    {% elif framework == 'koa' %}container_name: koa
+    {% elif framework == 'fastify' %}container_name: fastify
+    {% endif %}ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app     
+    environment:
+      NODE_ENV: development

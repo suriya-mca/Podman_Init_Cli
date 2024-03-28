@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  {{ project_name }}:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    {% if framework == 'spring' %}container_name: spring
+    {% elif framework == 'quarkus' %}container_name: quarkus
+    {% elif framework == 'micronaut' %}container_name: micronaut
+    {% elif framework == 'vertx' %}container_name: vertx
+    {% endif %}ports:
+      - "8080:8080"   
+    volumes:
+      - .:/app

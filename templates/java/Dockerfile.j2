@@ -1,0 +1,14 @@
+# Use a lightweight base image with the Eclipse Temurin (formerly AdoptOpenJDK) 17 JRE on Alpine Linux
+FROM eclipse-temurin:17-jre-alpine
+
+# Set the working directory inside the container
+WORKDIR /src
+
+# Copy the packaged JAR file from the local filesystem to the container
+COPY target/*.jar /src/app.jar
+
+# Expose port 8080 to allow external access to the application
+EXPOSE 8080
+
+# Define the entry point to execute the application when the container starts
+ENTRYPOINT ["java", "-jar" , "app.jar"]
