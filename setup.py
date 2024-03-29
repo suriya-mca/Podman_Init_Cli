@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name='podman-init',
-    version='0.1.6',
+    version='0.1.7',
     packages=find_packages(),
-    package_data={'': ['templates/**/*']},
+    package_data={'': ['templates/**/*.j2']},
     install_requires=[
         'click',
         'jinja2'
