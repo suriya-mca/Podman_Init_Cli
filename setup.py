@@ -2,9 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='podman-init',
-    version='0.1.2',
-    packages=find_packages(where='src'),
-    package_dir={"": "src"},
+    version='0.1.3',
     include_package_data=True,
     install_requires=[
         'click',
@@ -12,7 +10,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'podman-init = src.main:podman_init'
+            'podman-init = src:podman_init'
         ]
     },
     author='Suriya',
