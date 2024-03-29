@@ -24,7 +24,7 @@ def podman_init(project_name, language):
                 click.echo(style("Exiting...", fg='red'))
                 sys.exit()
 
-            template_dir = os.path.join(os.path.dirname(__file__), '../templates', language)
+            template_dir = os.path.join(os.path.dirname(__file__), 'templates', language)
 
         case "java":        
             framework = click.prompt('Choose framework', 
@@ -35,7 +35,7 @@ def podman_init(project_name, language):
                 click.echo(style("Exiting...", fg='red'))
                 sys.exit()
 
-            template_dir = os.path.join(os.path.dirname(__file__), '../templates', language)
+            template_dir = os.path.join(os.path.dirname(__file__), 'templates', language)
 
         case "go" :
             framework = click.prompt('Choose framework', 
@@ -46,7 +46,7 @@ def podman_init(project_name, language):
                 click.echo(style("Exiting...", fg='red'))
                 sys.exit()
 
-            template_dir = os.path.join(os.path.dirname(__file__), '../templates', language)
+            template_dir = os.path.join(os.path.dirname(__file__), 'templates', language)
 
         case "node" :
             framework = click.prompt('Choose framework', 
@@ -57,7 +57,7 @@ def podman_init(project_name, language):
                 click.echo(style("Exiting...", fg='red'))
                 sys.exit()
 
-            template_dir = os.path.join(os.path.dirname(__file__), '../templates', language)
+            template_dir = os.path.join(os.path.dirname(__file__), 'templates', language)
 
         case "c#" :
             framework = click.prompt('Choose framework', 
@@ -68,7 +68,7 @@ def podman_init(project_name, language):
                 click.echo(style("Exiting...", fg='red'))
                 sys.exit()
 
-            template_dir = os.path.join(os.path.dirname(__file__), '../templates', language)
+            template_dir = os.path.join(os.path.dirname(__file__), 'templates', language)
 
         case "rust" :
             framework = click.prompt('Choose framework', 
@@ -79,7 +79,7 @@ def podman_init(project_name, language):
                 click.echo(style("Exiting...", fg='red'))
                 sys.exit()
 
-            template_dir = os.path.join(os.path.dirname(__file__), '../templates', language)
+            template_dir = os.path.join(os.path.dirname(__file__), 'templates', language)
 
         case _:
             click.echo("Invalid language selected.")
