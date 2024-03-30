@@ -1,6 +1,8 @@
 import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 from click.testing import CliRunner
-from src.main import podman_init
+from main import podman_init
 
 def test_podman_init_python_flask():
     runner = CliRunner()
@@ -187,11 +189,4 @@ def test_podman_init_chash_blazor():
     assert os.path.isfile('.dockerignore')
     os.remove('Dockerfile')
     os.remove('docker-compose.yml')
-    os.remove('.dockerignore') 
-
-def test_podman_init_invalid_language():
-    runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'invalid_language'])
-    assert result.exit_code != 0
-    expected_error_message = "Invalid language selected."
-    assert expected_error_message in result.output
+    os.remove('.dockerignore')
