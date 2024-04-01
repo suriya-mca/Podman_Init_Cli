@@ -190,3 +190,58 @@ def test_podman_init_chash_blazor():
     os.remove('Dockerfile')
     os.remove('docker-compose.yml')
     os.remove('.dockerignore')
+
+def test_podman_init_rust_actix():
+    runner = CliRunner()
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='actix\n')
+    assert result.exit_code == 0
+    assert os.path.isfile('Dockerfile')
+    assert os.path.isfile('docker-compose.yml')
+    assert os.path.isfile('.dockerignore')
+    os.remove('Dockerfile')
+    os.remove('docker-compose.yml')
+    os.remove('.dockerignore')
+
+def test_podman_init_rust_axum():
+    runner = CliRunner()
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='axum\n')
+    assert result.exit_code == 0
+    assert os.path.isfile('Dockerfile')
+    assert os.path.isfile('docker-compose.yml')
+    assert os.path.isfile('.dockerignore')
+    os.remove('Dockerfile')
+    os.remove('docker-compose.yml')
+    os.remove('.dockerignore')
+
+def test_podman_init_rust_rocket():
+    runner = CliRunner()
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='rocket\n')
+    assert result.exit_code == 0
+    assert os.path.isfile('Dockerfile')
+    assert os.path.isfile('docker-compose.yml')
+    assert os.path.isfile('.dockerignore')
+    os.remove('Dockerfile')
+    os.remove('docker-compose.yml')
+    os.remove('.dockerignore')
+
+def test_podman_init_rust_warp():
+    runner = CliRunner()
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='warp\n')
+    assert result.exit_code == 0
+    assert os.path.isfile('Dockerfile')
+    assert os.path.isfile('docker-compose.yml')
+    assert os.path.isfile('.dockerignore')
+    os.remove('Dockerfile')
+    os.remove('docker-compose.yml')
+    os.remove('.dockerignore')
+
+def test_podman_init_rust_tide():
+    runner = CliRunner()
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='tide\n')
+    assert result.exit_code == 0
+    assert os.path.isfile('Dockerfile')
+    assert os.path.isfile('docker-compose.yml')
+    assert os.path.isfile('.dockerignore')
+    os.remove('Dockerfile')
+    os.remove('docker-compose.yml')
+    os.remove('.dockerignore')
