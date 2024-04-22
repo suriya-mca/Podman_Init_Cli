@@ -6,15 +6,11 @@ services:
       context: .
       dockerfile: Dockerfile
     {% if framework == 'django' %}container_name: django
-    ports:
-      - "8000:8000"
     {% elif framework == 'fastapi' %}container_name: fastapi
-    ports:
-      - "8000:8000"
-    {% elif framework == 'flask' %}container_name: flask
-    ports:
-      - "5000:5000"      
-    {% endif %}volumes:
+    {% elif framework == 'flask' %}container_name: flask      
+    {% endif %}ports:
+      - "{{ port }}:{{ port }}"
+    volumes:
       - .:/app
 
     # Add additional configurations as needed

@@ -24,9 +24,7 @@ FROM alpine:latest
 COPY --from=build /app/main .
 
 # Expose port 3000 to the outside world
-{% if framework == 'gin' or framework == 'echo' %}EXPOSE 8080
-{% elif framework == 'chi' %}EXPOSE 3333
-{% elif framework == 'fiber' %}EXPOSE 3000
-{% endif %}
+EXPOSE {{ port }}
+
 # Command to run the executable
 CMD ["./main"]

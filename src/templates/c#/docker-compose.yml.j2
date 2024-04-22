@@ -8,7 +8,7 @@ services:
     {% if framework == 'dot-net_core' %}container_name: dot-net_core
     {% elif framework == 'blazor' %}container_name: blazor
     {% endif %}ports:
-      - "5000:80"   
+      - "{{ port }}:80"   
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       

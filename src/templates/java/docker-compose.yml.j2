@@ -10,6 +10,6 @@ services:
     {% elif framework == 'micronaut' %}container_name: micronaut
     {% elif framework == 'vertx' %}container_name: vertx
     {% endif %}ports:
-      - "8080:8080"   
+      - "{{ port }}:{{ port }}"   
 
     # Add additional configurations as needed

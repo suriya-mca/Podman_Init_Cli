@@ -18,18 +18,16 @@ RUN pip install --upgrade pip && \
 	pip install --no-cache-dir --upgrade -r requirements.txt && \
 
 # Expose ports and define startup commands based on selected framework
-{% if framework == 'django' %}EXPOSE 8000
-
+EXPOSE {{ port }}
+{% if framework == 'django' %}
 # Specify the entry point
 CMD ["python", "manage.py", "runserver"]
 
-{% elif framework == 'fastapi' %}EXPOSE 8000
-
-# # Specify the entry point (Replace "mail" with your actual file name)
+{% elif framework == 'fastapi' %}
+# Specify the entry point (Replace "mail" with your actual file name)
 CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--reload"]
 
-{% elif framework == 'flask' %}EXPOSE 5000
-
+{% elif framework == 'flask' %}
 # Specify the entry point
 CMD ["flask", "run"]
 {% endif %}

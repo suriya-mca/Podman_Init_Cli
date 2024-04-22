@@ -6,16 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     {% if framework == 'gin' %}container_name: gin
-    ports:
-      - "8080:8080"
     {% elif framework == 'echo' %}container_name: echo
-    ports:
-      - "8080:8080"
     {% elif framework == 'chi' %}container_name: chi
-    ports:
-      - "3333:3333"
     {% elif framework == 'fiber' %}container_name: fiber
-    ports:
-      - "3000:3000"
-    {% endif %}
+    {% endif %}ports:
+      - "{{ port }}:{{ port }}"
     # Add additional configurations as needed

@@ -6,19 +6,10 @@ services:
       context: .
       dockerfile: Dockerfile
     {% if framework == 'actix' %}container_name: actix
-    ports:
-      - "8080:8080"
     {% elif framework == 'axum' %}container_name: axum
-    ports:
-      - "3000:3000"
     {% elif framework == 'rocket' %}container_name: rocket
-    ports:
-      - "8000:8000"
     {% elif framework == 'warp' %}container_name: warp
-    ports:
-      - "3030:3030"
-    {% elif framework == 'tide' %}container_name: tide
-    ports:
-      - "8000:8000"      
-    {% endif %}
+    {% elif framework == 'tide' %}container_name: tide     
+    {% endif %}ports:
+      - "{{ port }}:{{ port }}"
     # Add additional configurations as needed

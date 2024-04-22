@@ -10,7 +10,7 @@ services:
     {% elif framework == 'koa' %}container_name: koa
     {% elif framework == 'fastify' %}container_name: fastify
     {% endif %}ports:
-      - "3000:3000"
+      - "{{ port }}:{{ port }}"
     volumes:
       - .:/usr/src/app     
     environment:
