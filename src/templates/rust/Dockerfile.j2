@@ -27,10 +27,7 @@ FROM debian:buster-slim
 COPY --from=builder /usr/src/myapp/target/release/myapp .
 
 # Expose the port the Actix Web application will listen on
-{% if framework == 'actix' %}EXPOSE 8080
-{% elif framework == 'axum' %}EXPOSE 3000
-{% elif framework == 'rocket' or framework == 'tide' %}EXPOSE 8000
-{% elif framework == 'warp' %}EXPOSE 3030
-{% endif %}
+Expose {{ port }}
+
 # Command to run the application
 CMD ["./myapp"]

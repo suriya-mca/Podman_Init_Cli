@@ -6,7 +6,7 @@ from main import podman_init
 
 def test_podman_init_python_flask():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'python'], input='flask\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'python'], input='flask\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -17,7 +17,7 @@ def test_podman_init_python_flask():
 
 def test_podman_init_python_fastapi():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'python'], input='fastapi\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'python'], input='fastapi\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -28,7 +28,7 @@ def test_podman_init_python_fastapi():
 
 def test_podman_init_python_django():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'python'], input='django\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'python'], input='django\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -39,7 +39,7 @@ def test_podman_init_python_django():
 
 def test_podman_init_java_spring():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'java'], input='spring\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'java'], input='spring\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -50,7 +50,7 @@ def test_podman_init_java_spring():
 
 def test_podman_init_java_quarkus():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'java'], input='quarkus\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'java'], input='quarkus\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -61,7 +61,7 @@ def test_podman_init_java_quarkus():
 
 def test_podman_init_java_micronaut():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'java'], input='micronaut\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'java'], input='micronaut\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -72,7 +72,7 @@ def test_podman_init_java_micronaut():
 
 def test_podman_init_java_vertx():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'java'], input='vertx\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'java'], input='vertx\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -83,7 +83,7 @@ def test_podman_init_java_vertx():
 
 def test_podman_init_go_gin():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'go'], input='gin\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'go'], input='gin\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -94,7 +94,7 @@ def test_podman_init_go_gin():
 
 def test_podman_init_go_echo():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'go'], input='echo\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'go'], input='echo\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -105,7 +105,7 @@ def test_podman_init_go_echo():
 
 def test_podman_init_go_chi():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'go'], input='chi\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'go'], input='chi\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -116,7 +116,7 @@ def test_podman_init_go_chi():
 
 def test_podman_init_go_fiber():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'go'], input='fiber\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'go'], input='fiber\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -127,7 +127,7 @@ def test_podman_init_go_fiber():
 
 def test_podman_init_node_express():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'node'], input='express\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'node'], input='express\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -138,7 +138,7 @@ def test_podman_init_node_express():
 
 def test_podman_init_node_nest():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'node'], input='nest\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'node'], input='nest\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -149,7 +149,7 @@ def test_podman_init_node_nest():
 
 def test_podman_init_node_koa():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'node'], input='koa\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'node'], input='koa\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -160,7 +160,7 @@ def test_podman_init_node_koa():
 
 def test_podman_init_node_fastify():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'node'], input='fastify\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'node'], input='fastify\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -171,7 +171,7 @@ def test_podman_init_node_fastify():
 
 def test_podman_init_chash_dotnet_core():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'c#'], input='.net core\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'c#'], input='.net core\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -182,7 +182,7 @@ def test_podman_init_chash_dotnet_core():
 
 def test_podman_init_chash_blazor():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'c#'], input='blazor\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'c#'], input='blazor\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -193,7 +193,7 @@ def test_podman_init_chash_blazor():
 
 def test_podman_init_rust_actix():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='actix\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='actix\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -204,7 +204,7 @@ def test_podman_init_rust_actix():
 
 def test_podman_init_rust_axum():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='axum\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='axum\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -215,7 +215,7 @@ def test_podman_init_rust_axum():
 
 def test_podman_init_rust_rocket():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='rocket\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='rocket\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -226,7 +226,7 @@ def test_podman_init_rust_rocket():
 
 def test_podman_init_rust_warp():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='warp\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='warp\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')
@@ -237,7 +237,7 @@ def test_podman_init_rust_warp():
 
 def test_podman_init_rust_tide():
     runner = CliRunner()
-    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='tide\n')
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'rust'], input='tide\n8000\n')
     assert result.exit_code == 0
     assert os.path.isfile('Dockerfile')
     assert os.path.isfile('docker-compose.yml')

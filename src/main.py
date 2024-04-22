@@ -20,6 +20,9 @@ def podman_init(project_name, language):
                                       type=click.Choice(['django', 'fastapi', 'flask', 'exit'], case_sensitive=False), 
                                       show_choices=True)
 
+            port = click.prompt('Choose port', 
+                                 type=int)
+
             if framework == 'exit':
                 click.echo(style("Exiting...", fg='red'))
                 sys.exit()
@@ -30,6 +33,9 @@ def podman_init(project_name, language):
             framework = click.prompt('Choose framework', 
                                       type=click.Choice(['spring', 'quarkus', 'micronaut', 'vertx', 'exit'], case_sensitive=False), 
                                       show_choices=True)
+
+            port = click.prompt('Choose port', 
+                                 type=int)
 
             if framework == 'exit':
                 click.echo(style("Exiting...", fg='red'))
@@ -42,6 +48,9 @@ def podman_init(project_name, language):
                                       type=click.Choice(['gin', 'echo', 'chi', 'fiber', 'exit'], case_sensitive=False), 
                                       show_choices=True)
 
+            port = click.prompt('Choose port', 
+                                 type=int)
+
             if framework == 'exit':
                 click.echo(style("Exiting...", fg='red'))
                 sys.exit()
@@ -52,6 +61,9 @@ def podman_init(project_name, language):
             framework = click.prompt('Choose framework', 
                                       type=click.Choice(['express', 'nest', 'koa', 'fastify', 'exit'], case_sensitive=False), 
                                       show_choices=True)
+
+            port = click.prompt('Choose port', 
+                                 type=int)
 
             if framework == 'exit':
                 click.echo(style("Exiting...", fg='red'))
@@ -64,6 +76,9 @@ def podman_init(project_name, language):
                                       type=click.Choice(['.net core', 'blazor'], case_sensitive=False), 
                                       show_choices=True)
 
+            port = click.prompt('Choose port', 
+                                 type=int)
+
             if framework == 'exit':
                 click.echo(style("Exiting...", fg='red'))
                 sys.exit()
@@ -74,6 +89,9 @@ def podman_init(project_name, language):
             framework = click.prompt('Choose framework', 
                                       type=click.Choice(['actix', 'axum', 'rocket', 'warp', 'tide', 'exit'], case_sensitive=False), 
                                       show_choices=True)
+
+            port = click.prompt('Choose port', 
+                                 type=int)
 
             if framework == 'exit':
                 click.echo(style("Exiting...", fg='red'))
@@ -88,13 +106,13 @@ def podman_init(project_name, language):
     load_jinja_env = Environment(loader=FileSystemLoader(template_dir))
 
     dockerfile_template = load_jinja_env.get_template('Dockerfile.j2')
-    dockerfile_content = dockerfile_template.render(project_name=project_name, framework=framework)
+    dockerfile_content = dockerfile_template.render(project_name=project_name, framework=framework, port=port)
 
     with open('Dockerfile', 'w') as f:
         f.write(dockerfile_content)
 
     compose_template = load_jinja_env.get_template('docker-compose.yml.j2')
-    compose_content = compose_template.render(project_name=project_name, framework=framework)
+    compose_content = compose_template.render(project_name=project_name, framework=framework, port=port)
 
     with open('docker-compose.yml', 'w') as f:
         f.write(compose_content)

@@ -8,7 +8,7 @@ WORKDIR /src
 COPY target/*.jar /src/app.jar
 
 # Expose port 8080 to allow external access to the application
-EXPOSE 8080
+EXPOSE {{ port }}
 
 # Define the entry point to execute the application when the container starts
 ENTRYPOINT ["java", "-jar" , "app.jar"]
