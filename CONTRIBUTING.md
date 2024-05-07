@@ -5,14 +5,13 @@ Thank you for considering contributing to podman-init! We appreciate your intere
 ## How to Contribute
 We welcome contributions in various forms, including bug reports, feature requests, code improvements, documentation enhancements, and more. Here's how you can contribute:
 
-1.Opening Issues: If you encounter any bugs, have suggestions, or want to request a new feature, please open an issue on our issue tracker.
-2.Submitting Pull Requests (PRs): We encourage you to fork this repository, make your changes, and submit a pull request. Please ensure your PR adheres to the following guidelines:
+1. `Opening Issues`: If you encounter any bugs, have suggestions, or want to request a new feature, please open an issue on our tracker[https://github.com/users/suriya-mca/projects/8/views/1].
+2. `Submitting Pull Requests (PRs)`: We encourage you to fork this repository, make your changes, and submit a pull request. Please ensure your PR adheres to the following guidelines:
 - Describe the problem or feature in the PR description.
 - Follow the existing coding style and conventions.
 - Include relevant tests if applicable.
 - Update the documentation, if necessary.
 - Ensure your changes don't introduce any breaking changes unless absolutely necessary.
-- Reporting Security Vulnerabilities: If you discover any security-related issues, please report them via email to security@example.com rather than using the issue tracker. We will address these issues promptly.
 
 ## Development Workflow
 This project follows the Git branching model with two main branches:
@@ -25,7 +24,7 @@ To start contributing, follow these steps:
 
 - Fork this repository to your GitHub account.
 - Clone the forked repository to your local machine.
-- Create a new branch for your changes: git checkout -b feature-branch.
+- Create a new branch for your changes: git checkout -b dev.
 - Make your changes and ensure they are properly tested.
 - Commit your changes with a descriptive commit message: git commit -m "Your message".
 - Push your changes to your fork: git push origin feature-branch.
