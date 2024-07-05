@@ -34,4 +34,8 @@ CMD ["flask", "run"]
 {% elif framework == 'pyramid' %}
 # Specify the entry point
 CMD ["pserve", "development.ini"]
+
+{% elif framework == 'flacon' %}
+# Specify the entry point
+CMD ["gunicorn", "app:api", "-b", "0.0.0.0:8000"]
 {% endif %}

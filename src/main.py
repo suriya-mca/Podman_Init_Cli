@@ -17,7 +17,7 @@ def podman_init(project_name, language):
     match language:
         case "python":       
             framework = click.prompt('Choose framework', 
-                                      type=click.Choice(['django', 'fastapi', 'flask', 'pyramid', 'exit'], case_sensitive=False), 
+                                      type=click.Choice(['django', 'fastapi', 'flask', 'pyramid', 'flacon', 'exit'], case_sensitive=False), 
                                       show_choices=True)
 
             port = click.prompt('Choose port', 

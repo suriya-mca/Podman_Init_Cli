@@ -8,7 +8,8 @@ services:
     {% if framework == 'django' %}container_name: django
     {% elif framework == 'fastapi' %}container_name: fastapi
     {% elif framework == 'flask' %}container_name: flask
-    {% elif framework == 'pyramid' %}container_name: pyramid     
+    {% elif framework == 'pyramid' %}container_name: pyramid 
+    {% elif framework == 'flacon' %}container_name: flacon     
     {% endif %}ports:
       - "{{ port }}:{{ port }}"
     volumes:
