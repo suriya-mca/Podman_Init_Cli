@@ -30,4 +30,8 @@ CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--reload"]
 {% elif framework == 'flask' %}
 # Specify the entry point
 CMD ["flask", "run"]
+
+{% elif framework == 'pyramid' %}
+# Specify the entry point
+CMD ["pserve", "development.ini"]
 {% endif %}
