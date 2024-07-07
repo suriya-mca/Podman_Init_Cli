@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='podman-init',
-    version='1.0.1',
+    version='1.0.2',
     packages=find_packages(),
     package_data={'': ['templates/**/*.j2']},
     include_package_data=True,
