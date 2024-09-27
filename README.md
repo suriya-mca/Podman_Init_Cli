@@ -1,4 +1,5 @@
 # podman-init
+![GitHub License](https://img.shields.io/github/license/suriya-mca/Podman_Init_Cli) ![PyPI - Version](https://img.shields.io/pypi/v/podman-init) ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/suriya-mca/Podman_Init_Cli?color=orange) ![GitHub Repo stars](https://img.shields.io/github/stars/suriya-mca/Podman_Init_Cli?style=flat&color=pink) ![GitHub forks](https://img.shields.io/github/forks/suriya-mca/Podman_Init_Cli?style=flat&color=yellow)
 
 `podman-init` is a Python command-line tool that automates the process of initializing Docker-related files for your projects. With `podman-init`, you can quickly generate Dockerfile, docker-compose.yml, and .dockerignore files tailored to your project's language and framework, saving you time and effort during project setup.
 
