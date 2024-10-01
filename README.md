@@ -26,4 +26,6 @@ Simply run podman-init and follow the prompts to generate Docker-related files f
 podman-init
 ```
 
+[PyPI Package Status](https://pypistats.org/packages/podman-init)
+
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
