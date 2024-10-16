@@ -81,6 +81,17 @@ def test_podman_init_java_vertx():
     os.remove('docker-compose.yml')
     os.remove('.dockerignore')
 
+def test_podman_init_java_javalin():
+    runner = CliRunner()
+    result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'java'], input='javalin\n8000\n')
+    assert result.exit_code == 0
+    assert os.path.isfile('Dockerfile')
+    assert os.path.isfile('docker-compose.yml')
+    assert os.path.isfile('.dockerignore')
+    os.remove('Dockerfile')
+    os.remove('docker-compose.yml')
+    os.remove('.dockerignore')
+
 def test_podman_init_go_gin():
     runner = CliRunner()
     result = runner.invoke(podman_init, ['--project-name', 'test_project', '--language', 'go'], input='gin\n8000\n')
