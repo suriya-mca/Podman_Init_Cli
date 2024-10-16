@@ -9,6 +9,7 @@ services:
     {% elif framework == 'quarkus' %}container_name: quarkus
     {% elif framework == 'micronaut' %}container_name: micronaut
     {% elif framework == 'vertx' %}container_name: vertx
+    {% elif framework == 'javalin' %}container_name: javalin
     {% endif %}ports:
       - "{{ port }}:{{ port }}"   
 

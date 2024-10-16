@@ -31,7 +31,7 @@ def podman_init(project_name, language):
 
         case "java":        
             framework = click.prompt('Choose framework', 
-                                      type=click.Choice(['spring', 'quarkus', 'micronaut', 'vertx', 'exit'], case_sensitive=False), 
+                                      type=click.Choice(['spring', 'quarkus', 'micronaut', 'vertx', 'javalin', 'exit'], case_sensitive=False), 
                                       show_choices=True)
 
             port = click.prompt('Choose port', 
